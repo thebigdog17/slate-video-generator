@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: slate-video-generator
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: REPLICATE_API_TOKEN
+        sync: false
+      - key: REPLICATE_MODEL
+        value: minimax/video-01
+      - key: MAX_GENERATIONS_PER_DAY
+        value: "20"
+      - key: MAX_PER_IP_PER_HOUR
+        value: "3"
